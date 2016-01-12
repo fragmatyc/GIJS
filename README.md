@@ -1,5 +1,5 @@
 ## Groupe d'intérêt JavaScript - CGI Québec
-Ce dépôt Git est destiné à la formation sur le JavaScript moderne du GIJS chez CGI à Québec. Avant chaque cours, le code source sera déposé ici afin de vous permettre d'en prendre une copie. Les présentations Reveal seront commitée à la fin du cours pour consultation future.
+Ce dépôt Git est destiné à la formation sur le JavaScript moderne du GIJS chez CGI à Québec. Avant chaque cours, le code source sera déposé ici afin de vous permettre d'en prendre une copie. Les présentations Reveal seront commitées à la fin du cours pour consultation future.
 
 ### Cours 1
 **Date:** 13 janvier 2016
