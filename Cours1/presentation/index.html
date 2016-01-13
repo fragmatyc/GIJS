@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>GIJS - Formation JavaScript Moderne - Cours 1</title>
+
+		<meta name="description" content="Formation JavaScript moderne dans le cadre du Groupe d'intérêt JavaScript">
+		<meta name="author" content="Sylvain Cloutier">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+                    <h2>Formation JS Moderne <small>#1</small></h2>
+                    <p><small>Par: Sylvain Cloutier</small></p>
+                </section>
+                <section>
+                    <h3>Qui suis-je?</h3>
+                    <img class="stretch" src="img/abeille.jpg" style="width:25%; height:25%"/>
+                    <p>
+                        Twitter: <a href="https://twitter.com/syl20TOS">@Syl20TOS</a><br/>
+                        Github: <a href="https://github.com/fragmatyc">@fragmatyc</a><br/>
+                        Blog: <a href="http://examples.javacodegeeks.com">Java Code Geeks</a> + 
+                        <a href="http://www.webcodegeeks.com">Web Code Geeks</a>
+                    </p>
+                </section>
+                <section>
+                    <section data-background="img/wth.gif">
+                        <h2>Le GIJS?</h2>
+                    </section>
+                    <section>
+                        <p>Rassemblement de developpeurs partageant un intérêt ou une curiosité pour JS!</p>
+                    </section>
+                    <section>
+                        <h2>Et... pourquoi?</h2>
+                    </section>
+                    <section>
+                        <p>Promouvoir l'utilisation d'un langage en plein essor.</p>
+                    </section>
+                    <section>
+                        <h2>Soyons proactifs!</h2>
+                    </section>
+                </section>
+                <section>
+                    <section data-background="img/javascript.gif">
+                        <h2>Et JavaScript?</h2>
+                    </section>
+                    <section>
+                        <p>JavaScript, c'est un langage:</p>
+                        <ul>
+                            <li>Bien établi (est. 1995)</li>
+                            <li>Multi-paradigme 
+                                <ul>
+                                    <li>Script</li>
+                                    <li>OO</li>
+                                    <li>Fonctionnel</li>
+                                    <li>Etc.</li>
+                                </ul>
+                            </li>
+                            <li>Syntaxe connue (C/C++)</li>
+                            <li>Performant</li>
+                            <li>Interpreté et/ou compilé</li>
+                            <li><em>Extrêment</em> populaire</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Régie par ECMA (spécifications)</h3>
+                        <p>Assure la compatibilité inter-navigateur.</p>
+                    </section>
+                    <section>
+                        <h4>Moteurs d'exécution connus:</h4>
+                        <ul>
+                            <li>Spidermonkey <small>(Firefox)</small></li>
+                            <li>Chakra <small>(MS Edge/IE)</small></li>
+                            <li>JavaScriptCore <small>(Safari)</small></li>
+                            <li>V8 <small>(Chrome, Node.JS, MongoDB)</small></li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section data-background="img/moderne.gif">
+                        <h2>Pourquoi <em>moderne</em>?</h2>
+                    </section>
+                    <section>
+                        <h2>Connaissez-vous JS?</h2>
+                        <pre>
+                            <code>    function onSayHiButtonClick() {
+        var message = "Hi!";
+        alert(message);
+    }</code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h3>Qui pense que JS sert encore à ça?</h3>
+                        <p>(<a href="snowFall.html">Démo!</a>)</p>
+                    </section>
+                    <section>
+                        <h3>Et cette présentation?</h3>
+                        <p>100% JS - <a href="https://github.com/hakimel/reveal.js">Reveal.js</a></p>
+                    </section>
+                    <section>
+                        <h3>Et mon EDI?</h3>
+                        <p>100% JS - <a href="https://github.com/adobe/brackets">Adobe Brackets</a></p>
+                    </section>
+                    <section>
+                        <h2>100%?!?! NON!?!</h2>
+                    </section>
+                    <section>
+                        <h2>OUI!</h2>
+                        <img src="img/bracketsCodeFromGitHub.png"/>
+                    </section>
+                    <section>
+                        <h3>Alors... explorons ce monde!</h3>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h3>Objectif</h3>
+                        <img src="img/demoTicTacToe.png"/>
+                    </section>
+                    <section>
+                        <h3>Pourquoi un Tic Tac Toe?</h3>
+                        <ul>
+                            <li>Notre journée est finie</li>
+                            <li>Simple</li>
+                            <li>Amusant!</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h4>Ce que vous allez apprendre...</h4>
+                    </section>
+                    <section>
+                        <h3>Session 1 - Projet et TDD</h3>
+                        <ul>
+                            <li>POO</li>
+                            <li>TDD</li>
+                            <li>Environnement de développement</li>
+                            <li>Structure du code</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Session 2 - Intégration Angular.js et Bower</h3>
+                        <ul>
+                            <li>MVC côté client?!</li>
+                            <li>Single Page Application</li>
+                            <li>Gestion des dépendences avec Bower</li>
+                            <li>Les services Angular</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Session 3 - HTML5, Bootstrap et jQuery+UI</h3>
+                        <ul>
+                            <li>Survol des nouveautés de HTML5</li>
+                            <li>Design avec Bootstrap</li>
+                            <li>Animations avec CSS et JS</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Session 4 - Back-end Node.js</h3>
+                        <ul>
+                            <li>Qu'est-ce que Node.js?</li>
+                            <li>TDD pour Node</li>
+                            <li>Communication Front/Back-end</li>
+                            <li>SOA? Microservice? MVC?</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Session 5 - Multijoueur!</h3>
+                        <ul>
+                            <li>Angular Route</li>
+                            <li>Sécurité (JWT/SSL)</li>
+                            <li>MongoDB</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Session 6 - Le tout en temps réel</h3>
+                        <ul>
+                            <li>Concepts de temps-réel</li>
+                            <li>Socket.IO</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Session 7 - Grunt.js</h3>
+                        <ul>
+                            <li>Compilation</li>
+                            <li>Minification</li>
+                            <li>Packaging</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Session 8 - Padding!</h3>
+                        <ul>
+                            <li>Finir les sessions précédentes</li>
+                            <li>Approfondir au besoin</li>
+                            <li>Sujets non-couverts? Suggestions?</li>
+                        </ul>
+                    </section>
+                </section>
+                <section data-background="img/go.gif">
+                    <h1>GO!</h1>
+                </section>
+                <section>
+                    <section data-background="img/stop.gif">
+                        <h3>Pas si vite!</h3>
+                    </section>
+                    <section>
+                        <h3>Extreme Programming</h3>
+                        <p>Pairez-vous!</p>
+                    </section>
+                    <section>
+                        <h3>Exemple de moteur simple</h3>
+                        <pre><code>    var TicTacToeGame = function () {
+        // Retourne false si la partie est terminée
+        this.isGameInProgress = function () {};
+
+        // Retourne true si la grille est pleine
+        this.isBoardFull = function () {};
+
+        // Place un X ou un O sur la grille à la bonne cellule
+        this.playerMove = function (row, column) {}
+
+        // Obtient la valeur d'une cellule ("X", "O" ou undefined)
+        this.getCell = function (row, column) {};
+
+        // retourne true si un joueur a gagné!
+        this.hasSomeoneWin = function () {};
+    };</code></pre>
+                    </section>
+                    <section>
+                        <h3>Exemple de test QUnit</h3>
+                        <pre><code>
+    module("TicTacToeGame Test");
+
+    QUnit.test("TestThat...", function (assert) {
+        var game = new TicTacToeGame();
+        assert.ok(game);
+    });
+
+</code></pre>
+                    </section>
+                    <section>
+                        <h3>Test Driven Development Cycle</h3>
+                        <img src="img/red_green_tdd_cycle.png"/>
+                    </section>
+                </section>
+                <section>
+                    <h1>Go!</h1>
+                    <pre><code>git clone https://github.com/fragmatyc/GIJS.git</code></pre>
+                </section>
+                <section>
+                    <h3>Commentaires? Suggestions?</h3>
+                    <p>Ouvrez un <a href="https://github.com/fragmatyc/GIJS/issues">bug</a> :)</p>
+                    <h3>Communauté JS chez CGI QC</h3>
+                    <p> 
+                        <ul>
+                            <li>Wifi: vp-dir / decaf00008</li>
+                            <li>
+                                <a href="https://github.com/fragmatyc/GIJS">https://github.com/fragmatyc/GIJS</a>
+                            </li>
+                            <li>
+                                <a href="https://gijs-qc.slack.com/">https://gijs-qc.slack.com/</a>
+                            </li>
+                        </ul>
+                    </p>
+                </section>
+                
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
