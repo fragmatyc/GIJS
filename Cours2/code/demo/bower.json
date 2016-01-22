@@ -1,0 +1,13 @@
+{
+  "name": "demo",
+  "homepage": "https://github.com/fragmatyc/GIJS",
+  "description": "",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "qunit": "~1.20.0",
+    "angular": "~1.4.9"
+  }
+}

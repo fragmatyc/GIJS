@@ -3,14 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <title>POC Angular MVC</title>
-    <script src="">/* Modifier pour utiliser Angular téléchargé avec Bower */</script>
+    <script src="bower_components/angular/angular.min.js"></script>
     
     <script>
         // Création du module
+        var todoApp = angular.module('TodoApp', []);
         
-        // Création du service
+        todoApp.directive('todoApp', function () {
+            return {
+                restrict: 'E',
+                templateUrl: 'todoApp.tmpl.html'
+            }
+        });
         
         // Création du controller
+        todoApp.controller('TodoController', function (TodoService) {
+            this.showCompleted = false;
+            
+            this.resetDescriptionFieldAndFetchTodos = function () {
+                this.displayedTodo = TodoService.getTodos();
+                this.editedTodo = {
+                    description: "",
+                    completed: false
+                }
+            }
+            
+            this.onClickAddTodo = function () {
+                TodoService.addTodo(this.editedTodo);
+                this.resetDescriptionFieldAndFetchTodos();
+            }
+            
+            this.resetDescriptionFieldAndFetchTodos();
+        });
+        
+        // Création du service
+        todoApp.service('TodoService', function () {
+            this.todos = [];
+            
+            this.getTodos = function () {
+                return this.todos;    
+            } 
+            
+            this.addTodo = function (todoToAdd) {
+                this.todos.push(todoToAdd);
+            }
+        });
         
         // Création de la directive
         
@@ -30,7 +67,9 @@
     </header>
     <section id="applicationContainer" style="padding:50px 100px  50px 100px">
         
-        <!-- Code ici ! -->
+        <div ng-app="TodoApp" ng-controller="TodoController as ctl">
+            <todo-app></todo-app>
+        </div>
         
     </section>
     <footer style="text-align: center; border-top: 1px solid black; padding-top: 10px;">

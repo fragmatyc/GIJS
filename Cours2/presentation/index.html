@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js – The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+                    <h2>Formation JS Moderne <small>#2</small></h2>
+                    <p><small>Par: Sylvain Cloutier</small></p>
+                </section>
+                <section>
+                    <section data-background="img/back.gif">
+                        <h3>Retour sur la semaine passée!</h3>
+                    </section>
+                    <section>
+                        <h3>Cours 1</h3>
+                        <p>Est-ce que vous comprennez:</p>
+                        <ul>
+                            <li>TDD</li>
+                            <li>POO/JS en général</li>
+                            <li>GitHub</li>
+                            <li>Slack</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Test Driven Development</h3>
+                        <p>Malheureusement pas un cours de TDD!</p>
+                    </section>
+                    <section>
+                        <h1>Demo!</h1>
+                        <small>La suite de tests, le code.</small>
+                    </section>
+                </section>
+                <section>
+                    <section data-background="img/bower-logo.png">
+                        <h1>Bower.js</h1>
+                    </section>
+                    <section>
+                        <h3>De quessé?!!</h3>
+                    </section>
+                    <section>
+                        <h3>Bower est un gestionnaire de dépendences</h3>
+                        <p>Exactement comme Maven, NuGet, NPM, etc...
+                    </section>
+                    <section>
+                        <p>Permet de faciliter le téléchargement et la mise-à-jour des dépendences.</p>
+                    </section>
+                    <section>
+                        <h3>Recherche des dépendences</h3>
+                        <img src="img/bowersearch.png"/>
+                        
+                        <small><a href="http://bower.io/search" target="_blank">Bower.io</a></small>
+                    </section>
+                    <section>
+                        <h3>Recherche des dépendences</h3>
+                        <img src="img/bowersearch_cmd.png"/>
+                    </section>
+                    <section>
+                        <h3>Installation de Bower globalement</h3>
+                        <pre><code>npm install -g bower</code></pre>
+                    </section>
+                    <section data-background="img/waiting.gif">
+                        <p>Patience...</p>
+                    </section>
+                    <section>
+                        <h3>Récupérez le code du cours</h3>
+                        <p>Depuis le même répertoire que le dernier cours!</p>
+                        <pre><code>git pull</code></pre>
+                        <p>Exécutez les tests, pour être sûr...</p>
+                    </section>
+                    <section>
+                        <h3>Initialisation de bower</h3>
+                        <pre><code>bower init --config.interactive</code></pre>
+                    </section>
+                    <section>
+                        <h3>Résultat</h3>
+                        <pre><code>{
+  "name": "TicTacToe",
+  "homepage": "https://github.com/fragmatyc/GIJS",
+  "authors": [
+    "Sylvain &lt;sylvain.s.cloutier@cgi.com&gt;"
+  ],
+  "description": "Un petit jeu de tic tac toe",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [
+    "tic",
+    "tac",
+    "toe"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "js",
+    "test",
+    "tests"
+  ]
+}</code></pre>
+                    </section>
+                    <section>
+                        <h3>Ajoutons une dépendence!</h3>
+                        <p>QUnit est disponible sur Bower. Tapez:</p>
+                        <pre><code>bower install qunit --save</code></pre>
+                    </section>
+                    <section>
+                        <h3>Dépendence ajoutée!</h3>
+                        <pre><code>"dependencies": {
+  "qunit": "~1.20.0"
+}</code></pre>
+                    </section>
+                    <section>
+                        <h3>QUnit! Merci Bower!</h3>
+                        <img src="img/qunitfolder.png"/>
+                    </section>
+                    <section>
+                        <h3>Intégration avec la suite de tests</h3>
+                    </section>
+                    <section>
+                        <h3>Supprimez QUnit!</h3>
+                        <img src="img/deletequnit.png"/>
+                    </section>
+                    <section>
+                        <h3>Changez les références!</h3>
+                        <pre><code>&lt;link rel="stylesheet" type="text/css" href="../js/qunit/qunit/qunit.css"/&gt;
+&lt;script src="../js/qunit/qunit/qunit.js"&gt;&lt;/script&gt;</code></pre>
+                        <p>Dans le fichier <code>index.html</code></p>
+                    </section>
+                    <section>
+                        <h3>Success!</h3>
+                        <img src="img/testspass.png"/>
+                    </section>
+                    <section>
+                        <h3>Conclusion</h3>
+                        <p>Utilisez Bower. Toujours.</p>
+                    </section>
+                </section>
+                <section>
+                    <section data-background="img/angular.jpg">
+                    </section>
+                    <section>
+                        <h3>Qu'est-ce?</h3>
+                    </section>
+                    <section>
+                        <p>Angular.js est une librairie de scripts.</p>
+                    </section>
+                    <section>
+                        <h3>Exemple</h3>
+                        <pre><code>&lt;div class="panel-heading"&gt;
+  &lt;h1&gt;Angular MVC Tutorial &lt;small&gt;Tic Tac Toe &lt;/small&gt;&lt;/h1&gt;
+&lt;/div&gt;
+&lt;div class="panel-body"&gt;
+  &lt;div class="col-sm-6"&gt;
+    &lt;tic-tac-toe-grid&gt;&lt;/tic-tac-toe-grid&gt;
+  &lt;/div&gt;
+  &lt;!-- Etc... --&gt;</code></pre>
+                    </section>
+                    <section>
+                        <p>Les directives permettent de créer de nouvelles balises HTML!</p>
+                        <pre><code>&lt;tic-tac-toe-gird&gt;&lt;/tic-tac-toe-grid&gt;</code></pre>
+                    </section>
+                    <section>
+                        <h3>À quoi ça sert?</h3>
+                        <p>Yuck!</p>
+                        <pre><code>&lt;ul&gt;
+  &lt;script&gt;
+    for (i = 0; i &lt; 10; i++) {
+      document.write('&lt;li&gt;Item #' + i + '&lt;/li&gt;');
+    }
+  &lt;/script&gt;
+&lt;/ul&gt;</code></pre>
+                    </section>
+                    <section>
+                        <h3>Pourquoi Angular?</h3>
+                        <ul>
+                            <li>HTML est un language déclaratif.</li>
+                            <li>SoC, SRP (SOLID), Cohésion, autre?</li>
+                            <li>Le code des vues PEUT être propre!</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Angular offre:</h3>
+                        <ul>
+                            <li>La création de modules</li>
+                            <li>Directives</li>
+                            <li>Controllers</li>
+                            <li>Services/Factories</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Module</h3>
+                        <p>Un module représente une <em>feature</em> de l'application, un composant réutilisable.</p>
+                        <p>Un système doit avoir un module d'application (orchestration des dépendences).</p>
+                    </section>
+                    <section>
+                        <h3>Création d'un nouveau module?!</h3>
+                        <pre><code>var monModule = angular.module('monModule', []);</code></pre>
+                    </section>
+                    <section>
+                        <h3>Utilisation d'un module</h3>
+                        <pre><code>&lt;div ng-app="monModule"&gt;&lt;/div&gt;</code></pre>
+                    </section>
+                    <section>
+                        <h3>Que c'est?! <code>ng-app</code>?</h3>
+                        <pre><code>&lt;div ng-app="monModule"&gt;&lt;/div&gt;</code></pre>
+                    </section>
+                    <section>
+                        <h3>Une directive!</h3>
+                        <a href="https://docs.angularjs.org/api/ng/directive/ngApp">ngApp</a> doc!
+                    </section>
+                    <section>
+                        <h3>Controller</h3>
+                        <p>Un controller prend en charge la gestion des événements de la vue et délégue l'exécution des règles d'affaires à la couche modèle.</p>
+                    </section>
+                    <section>
+                        <h3>Création d'un controller?!</h3>
+                        <pre><code>var monModule = angular.module('monModule', []);
+                        
+monModule.controller('monController', function ($scope) {
+  // Code du controller
+});</code></pre>
+                    </section>
+                    <section>
+                        <h3>Utilisation du controller</h3>
+                        <pre><code>&lt;div ng-app="monModule" ng-controller="monController"&gt;
+                        
+&lt;/div&gt;
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Service</h3>
+                        <p>Un service est un objet substituable/réutilisable qui permet l'exécution de la logique d'affaire d'un module.</p>
+                    </section>
+                    <section>
+                        <h3>Création d'un service?!</h3>
+                        <pre><code>var monModule = angular.module('monModule', []);
+                        
+monModule.service('hiService', function () {
+
+});
+</code></pre>
+                    </section>
+                    <section>
+                        <h3>Utilisation du service</h3>
+                        <pre><code>monModule.controller('monController', function ($scope, hiService) {
+                        
+});</code></pre>
+                    </section>
+                    <section>
+                        <h3>Directive</h3>
+                        <p>Les directives sont des marqueurs pour le DOM qui seront compilés en HTML par le service <code>$compile</code> d'Angular.</p>
+                    </section>
+                    <section>
+                        <h3>Création d'une directive</h3>
+                        <pre><code>var monModule = angular.module('monModule', []);
+                        
+monModule.directive('customTag', function () {
+  return {
+    restrict: 'E',  // Element seulement
+    template: "<h3>Hello {{who}}</h3>"
+  };
+});</code></pre>
+                    </section>
+                    <section>
+                        <h3>Utilisation de la directive</h3>
+                        <pre><code>&lt;div id="applicationContainer" ng-app="monModule"
+    ng-controller="monController"&gt;
+  &lt;custom-tag&gt;&lt;/custom-tag&gt;
+&lt;/div&gt;</code></pre>
+                    </section>
+                </section>
+                <section>
+                    <section data-background="img/go.gif">
+                        <h1>À vous!</h1>
+                    </section>
+                    <section>
+                        <h3>Exercice 1</h3>
+                        <p>Créer une application MVC avec Angular</p>
+                        <ul>
+                            <li>Intégrer Bower</li>
+                            <li>Créer
+                                <ul>
+                                    <li>Un module</li>
+                                    <li>Un service</li>
+                                    <li>Un controller</li>
+                                    <li>Une directive</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <img src="img/mock.png"/>
+                        <ul>
+                            <li>Clique sur Ajouter:
+                                <ul>
+                                    <li>Ajoute un checkbox à la liste de TODO</li>
+                                    <li>Vide le champs texte</li>
+                                </ul>
+                            </li>
+                            <li>Clique sur la checkbox
+                                <ul>
+                                    <li>Marque la tâche comme "done"</li>
+                                </ul>
+                            </li>
+                            <li>Pour la liste des tâches
+                                <ul>
+                                    <li>N'affiche que les tâches en cours (!done)</li>
+                                    <li>Utiliser <a href="https://docs.angularjs.org/api/ng/directive/ngRepeat">ng-repeat</a>et <a href="https://docs.angularjs.org/api/ng/filter/filter">filter</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <p>Récupérez le code</p>
+                        <pre><code>git pull</code></pre>
+                        <p>Pour les nouveaux</p>
+                        <pre><code>git clone http://github.com/fragmatyc/GIJS.git</code></pre>
+                        <p>Wifi: vp-dir / decaf00008</p>
+                    </section>
+                    <section>
+                        <h3>Exercice 2</h3>
+                        <p>Intégrer Angular et Bower dans le Tic Tac Toe et créer un service qui interface avec le moteur.</p>
+                    </section>
+                </section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

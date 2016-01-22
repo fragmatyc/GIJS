@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Demo</title>
+    </head>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script>
+        var helloWorldApp = angular.module('helloWorldApp', []);
+        
+        helloWorldApp.directive('listWidget', function () {
+            return {
+                restrict: 'E',
+                templateUrl: 'listWidgetTmpl.html'
+            }
+        });
+        
+        helloWorldApp.service('helloWorldService', function () {
+            this.props = [];
+            
+            this.getPropertyList = function () {
+                return this.props;
+            }
+            
+            this.initializeProps = function () {
+                this.props = [0, 1, 2];
+            }
+            
+            this.addProp = function () {
+                this.props.push(this.props.length);
+            }
+            
+            this.initializeProps();
+        });
+        
+        helloWorldApp.controller('helloWorldController', function(helloWorldService) {
+            this.prop = helloWorldService.getPropertyList();
+            
+            this.onClick = function () {
+                helloWorldService.addProp();
+            }
+        });
+    </script>
+    <body>
+        <h1>Hello!</h1>
+        <div ng-app="helloWorldApp" ng-controller="helloWorldController as ctl">
+            <list-widget></list-widget>
+        </div>
+    </body>
+</html>
