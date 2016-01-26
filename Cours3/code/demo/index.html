@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>POC Angular MVC</title>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="module/todo.js"></script>
+    <script src="controller/todoController.js"></script>
+    <script src="service/todoService.js"></script>
+    <script src="directive/todoApp.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css"></script>
+    <link 
+</head>
+<body style="padding: 0px">
+    <header>
+        <nav style="padding-left: 25px;" class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav">
+                    <li><a href="https://docs.angularjs.org/guide/module" target="_blank">Création d'un module</a></li>
+                    <li><a href="https://docs.angularjs.org/guide/services" target="_blank">Création d'un service</a></li>
+                    <li><a href="https://docs.angularjs.org/guide/controller" target="_blank">Création d'un controller</a></li>
+                    <li><a href="https://docs.angularjs.org/api/ng/directive/ngRepeat" target="_blank">ngRepeat</a></li>
+                    <li><a href="https://docs.angularjs.org/api/ng/filter/filter" target="_blank">filter</a></li>
+                    <li><a href="http://getbootstrap.com/css" target="_blank">Bootstrap CSS</a></li>
+                    <li><a href="http://getbootstrap.com/components" target="_blank">Bootstrap Components</a></li>
+                </ul>
+                
+            </div>
+        </nav>
+    </header>
+    <section id="applicationContainer" style="padding-left: 20px;">
+        <h1>Todo Application</h1>
+        
+        <div style="padding-left: 50px; padding-right: 50px" ng-app="TodoApp" ng-controller="TodoController as ctl">
+            <todo-app></todo-app>
+        </div>
+        
+    </section>
+    <footer style="text-align: center; border-top: 1px solid black; padding-top: 10px;">
+        <strong>Formation JavaScript Moderne - Cours 2 - Exercice #1 - GIJS</strong>
+    </footer>
+</body>
+</html>
