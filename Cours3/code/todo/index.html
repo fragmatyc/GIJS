@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>POC Angular MVC</title>
+    <script src="bower_components/angular/angular.min.js"></script>
+    
+    <script>
+        // Création du module
+        var todoApp = angular.module('TodoApp', []);
+        
+        todoApp.directive('todoApp', function () {
+            return {
+                restrict: 'E',
+                templateUrl: 'todoApp.tmpl.html'
+            }
+        });
+        
+        // Création du controller
+        todoApp.controller('TodoController', function (TodoService) {
+            this.showCompleted = false;
+            
+            this.resetDescriptionFieldAndFetchTodos = function () {
+                this.displayedTodo = TodoService.getTodos();
+                this.editedTodo = {
+                    description: "",
+                    completed: false
+                }
+            }
+            
+            this.onClickAddTodo = function () {
+                TodoService.addTodo(this.editedTodo);
+                this.resetDescriptionFieldAndFetchTodos();
+            }
+            
+            this.resetDescriptionFieldAndFetchTodos();
+        });
+        
+        // Création du service
+        todoApp.service('TodoService', function () {
+            this.todos = [];
+            
+            this.getTodos = function () {
+                return this.todos;    
+            } 
+            
+            this.addTodo = function (todoToAdd) {
+                this.todos.push(todoToAdd);
+            }
+        });
+        
+        // Création de la directive
+        
+    </script>
+</head>
+<body style="padding: 25px;">
+    <header style="border-bottom: 1px solid black; padding-bottom:10px">
+        <h1>Todo Application</h1>
+        <nav style="padding-left: 25px;">
+            <strong style="padding-right: 10px;">Documentation:</strong>
+            <a href="https://docs.angularjs.org/guide/module" target="_blank">Création d'un module</a> - 
+            <a href="https://docs.angularjs.org/guide/services" target="_blank">Création d'un service</a> - 
+            <a href="https://docs.angularjs.org/guide/controller" target="_blank">Création d'un controller</a> - 
+            <a href="https://docs.angularjs.org/api/ng/directive/ngRepeat" target="_blank">ngRepeat</a> - 
+            <a href="https://docs.angularjs.org/api/ng/filter/filter" target="_blank">filter</a>
+        </nav>
+    </header>
+    <section id="applicationContainer" style="padding:50px 100px  50px 100px">
+        
+        <div ng-app="TodoApp" ng-controller="TodoController as ctl">
+            <todo-app></todo-app>
+        </div>
+        
+    </section>
+    <footer style="text-align: center; border-top: 1px solid black; padding-top: 10px;">
+        <strong>Formation JavaScript Moderne - Cours 2 - Exercice #1 - GIJS</strong>
+    </footer>
+</body>
+</html>

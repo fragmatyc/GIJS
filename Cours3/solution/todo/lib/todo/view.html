@@ -1,0 +1,21 @@
+<form class="form-inline">
+    <div class="form-group">
+        <label for="toDoDescField">To do: </label>
+        <input class="form-control" id="toDoDescField" type="text" ng-model="ctl.editedTodo.description"/>
+    </div>
+    
+    <button ng-click="ctl.onClickAddTodo()" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span></button>
+    
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" ng-model="ctl.showCompleted"/>
+             Show Completed Todos
+        </label>
+    </div>
+</form>
+
+<section style="padding:25px" class="container-fluid">
+    <div ng-repeat="curTodo in ctl.displayedTodo | filter: {completed: ctl.showCompleted}">
+        <input type="checkbox" ng-model="curTodo.completed"/> {{curTodo.description}}
+    </div>       
+</section>

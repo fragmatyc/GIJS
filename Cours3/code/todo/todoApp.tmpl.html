@@ -1,0 +1,8 @@
+<label>To do: </label>
+<input type="text" ng-model="ctl.editedTodo.description"/>
+<button ng-click="ctl.onClickAddTodo()">Add</button>
+<input type="checkbox" ng-model="ctl.showCompleted"/> Show Completed Todos
+
+<div ng-repeat="curTodo in ctl.displayedTodo | filter: {completed: ctl.showCompleted}">
+    <input type="checkbox" ng-model="curTodo.completed"/> {{curTodo.description}}
+</div>       
