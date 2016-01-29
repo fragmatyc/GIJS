@@ -5,68 +5,32 @@
     <title>POC Angular MVC</title>
     <script src="bower_components/angular/angular.min.js"></script>
     
-    <script>
-        // Création du module
-        var todoApp = angular.module('TodoApp', []);
-        
-        todoApp.directive('todoApp', function () {
-            return {
-                restrict: 'E',
-                templateUrl: 'todoApp.tmpl.html'
-            }
-        });
-        
-        // Création du controller
-        todoApp.controller('TodoController', function (TodoService) {
-            this.showCompleted = false;
-            
-            this.resetDescriptionFieldAndFetchTodos = function () {
-                this.displayedTodo = TodoService.getTodos();
-                this.editedTodo = {
-                    description: "",
-                    completed: false
-                }
-            }
-            
-            this.onClickAddTodo = function () {
-                TodoService.addTodo(this.editedTodo);
-                this.resetDescriptionFieldAndFetchTodos();
-            }
-            
-            this.resetDescriptionFieldAndFetchTodos();
-        });
-        
-        // Création du service
-        todoApp.service('TodoService', function () {
-            this.todos = [];
-            
-            this.getTodos = function () {
-                return this.todos;    
-            } 
-            
-            this.addTodo = function (todoToAdd) {
-                this.todos.push(todoToAdd);
-            }
-        });
-        
-        // Création de la directive
-        
-    </script>
+    <script src="js/todo/module.js"></script>
+    <script src="js/todo/directive.js"></script>
+    <script src="js/todo/controller.js"></script>
+    <script src="js/todo/service.js"></script>
+    
+    <script src="bower_components/jquery/dist/jquery.min.js" ></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    
 </head>
-<body style="padding: 25px;">
-    <header style="border-bottom: 1px solid black; padding-bottom:10px">
-        <h1>Todo Application</h1>
-        <nav style="padding-left: 25px;">
-            <strong style="padding-right: 10px;">Documentation:</strong>
-            <a href="https://docs.angularjs.org/guide/module" target="_blank">Création d'un module</a> - 
-            <a href="https://docs.angularjs.org/guide/services" target="_blank">Création d'un service</a> - 
-            <a href="https://docs.angularjs.org/guide/controller" target="_blank">Création d'un controller</a> - 
-            <a href="https://docs.angularjs.org/api/ng/directive/ngRepeat" target="_blank">ngRepeat</a> - 
-            <a href="https://docs.angularjs.org/api/ng/filter/filter" target="_blank">filter</a>
+<body>
+    <header>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav">
+                    <li><a href="https://docs.angularjs.org/guide/module" target="_blank">Création d'un module</a></li>
+                    <li><a href="https://docs.angularjs.org/guide/services" target="_blank">Création d'un service</a></li> 
+                    <li><a href="https://docs.angularjs.org/guide/controller" target="_blank">Création d'un controller</a></li>
+                    <li><a href="https://docs.angularjs.org/api/ng/directive/ngRepeat" target="_blank">ngRepeat</a></li> 
+                    <li><a href="https://docs.angularjs.org/api/ng/filter/filter" target="_blank">filter</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
     <section id="applicationContainer" style="padding:50px 100px  50px 100px">
-        
+        <h1>Todo Application</h1>
         <div ng-app="TodoApp" ng-controller="TodoController as ctl">
             <todo-app></todo-app>
         </div>

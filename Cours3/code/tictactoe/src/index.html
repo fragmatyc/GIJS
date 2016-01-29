@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+        <style>
+            .grid-cell {
+                height: 150px;
+                border: 1px solid darkgrey;
+            }
+        </style>
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/angular/angular.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+        
+        <script>
+            angular.module('ticTacToe', [])
+                .controller('gridController', function ($scope) {
+                    $scope.onCellClick = function($event) {
+                        var col = $($event.target).data("row");
+                        var row = $($event.target).data("column");
+                        
+                        $($event.target).html('<span class="glyphicon glyphicon-remove"></span>');
+                    }
+                });
+            
+        </script>
+    </head>
+
+    <body>
+        <div class="container" ng-app="ticTacToe" ng-controller="gridController">
+            <div class="row">
+                <div class="col-xs-4 grid-cell" ng-click="onCellClick($event)" data-row="1" data-column="1">
+                {{}}
+                </div>
+                <div class="col-xs-4 grid-cell" ng-click="onCellClick($event)" data-row="1" data-column="2"></div>
+                <div class="col-xs-4 grid-cell" ng-click="onCellClick($event)" data-row="1" data-column="3"></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-4 grid-cell" ng-click="onCellClick($event)" data-row="2" data-column="1"></div>
+                <div class="col-xs-4 grid-cell" ng-click="onCellClick($event)" data-row="2" data-column="2"></div>
+                <div class="col-xs-4 grid-cell" ng-click="onCellClick($event)" data-row="2" data-column="3"></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-4 grid-cell" ng-click="onCellClick($event)" data-row="3" data-column="1"></div>
+                <div class="col-xs-4 grid-cell" ng-click="onCellClick($event)" data-row="3" data-column="2"></div>
+                <div class="col-xs-4 grid-cell" ng-click="onCellClick($event)" data-row="3" data-column="3"></div>
+            </div>
+        </div>
+    </body>
+</html>

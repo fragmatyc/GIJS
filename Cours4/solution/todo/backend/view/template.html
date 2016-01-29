@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>POC Angular MVC</title>
+    <script src="js/lib/angular.min.js"></script>
+    <script src="js/todo.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+</head>
+<body>
+    <header>
+        <todo-menu></todo-menu>
+    </header>
+    <section id="applicationContainer" style="padding-left: 100px; padding-top: 50px">
+        <h1>Todo Application</h1>
+        <div ng-app="TodoApp" ng-controller="TodoController as ctl" style="padding-left: 50px; padding-right: 50px">
+            <todo-app></todo-app>
+        </div>
+        
+    </section>
+    <footer style="text-align: center; border-top: 1px solid black; padding-top: 10px;">
+        <strong>Formation JavaScript Moderne - Cours 2 - Exercice #1 - GIJS</strong>
+    </footer>
+</body>
+</html>

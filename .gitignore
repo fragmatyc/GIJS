@@ -1,1 +1,5 @@
-/Cours3/code/todo/bower_components/**
+/Cours3/code/todo/bower_components/**/*
+/Cours4/solution/HelloWorld/bower_components/**
+/Cours4/solution/HelloWorld/node_modules/**
+/Cours4/solution/todo/bower_components/**
+/Cours4/solution/todo/node_modules/**

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hello World</title>
+        <script src="js/test.js"></script>
+        
+        <script src="js/angular.min.js"></script>
+        <script src="js/hello/module.js"></script>
+        <script src="js/hello/controller.js"></script>
+        
+        <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+    </head>
+
+    <body ng-app="hello" ng-controller="HelloController">
+        <div class="container">
+            <h1>Hello World!</h1>
+            <div class="container-fluid">
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label for="whoField">Who?</label>
+                        <input id="whoField" class="form-control" placeholder="Say hello..."
+                               ng-model="who"/>
+                    </div>
+                    <button class="btn btn-primary" ng-click="onGoClick()">Go!</button>
+                </form>
+                <div class="container-fluid" style="padding-top: 50px;">
+                    <ul class="list-group">
+                        <li class="list-group-item {{hello.success ? 'list-group-item-success' : 'list-group-item-danger'}}" ng-repeat="hello in hellos">
+                            <code>
+                                {{hello.requestDate}}
+                            </code>
+                            :{{hello.message}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
