@@ -1,6 +1,17 @@
 ## Groupe d'intérêt JavaScript - CGI Québec
 Ce dépôt Git est destiné à la formation sur le JavaScript moderne du GIJS chez CGI à Québec. Avant chaque cours, le code source sera déposé ici afin de vous permettre d'en prendre une copie. Les présentations Reveal seront commitées à la fin du cours pour consultation future.
 
+### Cours 4
+**Date:** 3 février 2016
+**Heure:** 17h00
+**Lieu:** Salle Laberge - Labrousse
+
+* Session 3 - NodeJS et Angular Route
+  * Matière
+    * REST Api avec Node
+    * Navigation Angular Route
+  * Projet: Todo App
+
 ### Cours 3
 **Date:** 27 janvier 2016
 **Heure:** 17h00
