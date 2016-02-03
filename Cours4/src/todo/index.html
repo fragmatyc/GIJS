@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>POC Angular MVC</title>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="lib/todo/module.js"></script>
+    <script src="lib/todo/controller.js"></script>
+    <script src="lib/todo/service.js"></script>
+    <script src="lib/todo/directive.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-inverse">
+            <ul class="nav navbar-nav">
+                <li class="navbar-item"><a href="https://docs.angularjs.org/guide/module" target="_blank">Création d'un module</a></li>
+                <li class="navbar-item"><a href="https://docs.angularjs.org/guide/services" target="_blank">Création d'un service</a></li>
+                <li class="navbar-item"><a href="https://docs.angularjs.org/guide/controller" target="_blank">Création d'un controller</a></li>
+                <li class="navbar-item"><a href="https://docs.angularjs.org/api/ng/directive/ngRepeat" target="_blank">ngRepeat</a></li>
+                <li class="navbar-item"><a href="https://docs.angularjs.org/api/ng/filter/filter" target="_blank">filter</a></li>
+            </ul>  
+        </nav>
+    </header>
+    <section id="applicationContainer" style="padding-left: 100px; padding-top: 50px">
+        <h1>Todo Application</h1>
+        <div ng-app="TodoApp" ng-controller="TodoController as ctl" style="padding-left: 50px; padding-right: 50px">
+            <todo-app></todo-app>
+        </div>
+        
+    </section>
+    <footer style="text-align: center; border-top: 1px solid black; padding-top: 10px;">
+        <strong>Formation JavaScript Moderne - Cours 2 - Exercice #1 - GIJS</strong>
+    </footer>
+</body>
+</html>
