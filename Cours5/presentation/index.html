@@ -66,6 +66,11 @@
                         <p>Modélisation d'objets pour environnements asynchrones.</p>
                     </section>
                     <section>
+                        <h3>Importation et connexion</h3>
+                        <pre><code>var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/test');</code></pre>
+                    </section>
+                    <section>
                         <h3>Schema</h3>
                         <p>Définit la structure d'une collection de MongoDB.</p>
                         <pre><code>var mongoose = require('mongoose');
@@ -81,10 +86,44 @@ var catSchema = new mongoose.Schema({
                     <section>
                         <h3>Model</h3>
                         <p>Définition d'un document basé sur un schéma.</p>
-                        <code>var Cat = mongoose.model('Cat', catSchema);</code>
+                        <pre><code>var Cat = mongoose.model('Cat', catSchema);</code></pre>
                     </section>
                     <section>
-                        <h3>Instance et persistence</h3>
+                        <h3>Instance</h3>
+                        <p>Création d'un object (document) à persister.</p>
+                        <pre><code>var mimi = new Cat({
+  name: "Mimi",
+  furColor: "White",
+  birthDate: new Date(),
+  owner: "Sylvain"
+});</code></pre>
+                    </section>
+                    <section>
+                        <h3>Persistence</h3>
+                        <pre><code>mimi.save(function (err) {
+  if (err) {
+    console.log("Une erreur nous empêche de sauvegarder le chat.")
+  } else {
+    console.log("Chat sauvegardé!");
+  }
+});</code></pre>
+                    </section>
+                    <section>
+                        <h3>Requête</h3>
+                        <pre><code>Cat.find({}, function (err, dataFound) {
+  console.log(dataFound);
+});</code></pre>
+                    </section>
+                    <section>
+                        <h3>Démo!</h3>
+                        <p>
+                            <ol>
+                                <li>Démarrage d'une instance</li>
+                                <li>Code Node.js</li>
+                                <li>Mongo (cmd)</li>
+                                <li>mongo-express</li>
+                            </ol>
+                        </p>
                     </section>
                 </section>
 			</div>
