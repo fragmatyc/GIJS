@@ -1,6 +1,19 @@
 ## Groupe d'intérêt JavaScript - CGI Québec
 Ce dépôt Git est destiné à la formation sur le JavaScript moderne du GIJS chez CGI à Québec. Avant chaque cours, le code source sera déposé ici afin de vous permettre d'en prendre une copie. Les présentations Reveal seront commitées à la fin du cours pour consultation future.
 
+### Cours 7
+**Date:** 24 février 2016
+**Heure:** 17h00
+**Lieu:** Salle Laberge - Labrousse
+
+* Session 7 - WebSockets
+  * Matière
+    * Temps réel?
+    * Periodic Refresh, le Long Polling et les WebSockets
+  * Projet: Les petits cercles en multijoueur.
+
+<em>Cours 5 et 6 perdu quelque part dans l'historique de GitHub :(</em>
+
 ### Cours 4
 **Date:** 3 février 2016
 **Heure:** 17h00

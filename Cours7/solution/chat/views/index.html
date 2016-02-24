@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Untitled Document</title>
+        <script src="socket.io-client/socket.io.js"></script>
+        <script src="jquery/dist/jquery.min.js"></script>
+
+        <style>
+            .player {
+                border: 5px solid black;
+                border-radius: 50%;
+                position: absolute;
+            }
+        </style>
+        <script>
+            var socket = io({'sync disconnect on unload': true });
+            
+            var me = {
+                id: Math.floor(Math.random()*16777215).toString(16),
+                color: '#'+Math.floor(Math.random()*16777215).toString(16),
+                size: 50,
+                pos: {
+                    x: 0,
+                    y: 0
+                }
+            };
+            
+            $(function () {
+                drawPlayer(me);
+                socket.emit('player logged', me);
+            })
+            
+            socket.on('player move', function (player) {
+                drawPlayer(player);
+            });
+            
+            socket.on('player logged', function (players) {
+                for (curPlayerId in players) {
+                   var curPlayer = players[curPlayerId];
+                    if (!$('#' + curPlayer.id).length) {
+                        var playerDiv = $('<div>');
+                        playerDiv.attr('id', curPlayer.id);
+                        playerDiv.addClass('player');
+
+                        $("#world").append(playerDiv);
+                    } 
+                    
+                    drawPlayer(curPlayer);
+                }
+            });
+            
+            socket.on('player disconnect', function (playerId) {
+                $('#' + playerId).remove();
+            });
+            
+            function drawPlayer(player) {
+                $('#' + player.id).css("left", player.pos.x);
+                $('#' + player.id).css("top", player.pos.y);
+                $('#' + player.id).css("background-color", player.color);
+                $('#' + player.id).width(player.size+"px");
+                $('#' + player.id).height(player.size+"px");
+            }
+            
+            
+            $(window).keydown(function (event) {
+                switch (event.which) {
+                    case 40:
+                        if (me.pos.y < $(document).height() - 100) {
+                            me.pos.y += 50;
+                            
+                            socket.emit('player move', me);
+                        }
+                        
+                        break;
+                    case 38:
+                        if (me.pos.y > 0) {
+                            me.pos.y -= 50;
+                            socket.emit('player move', me);
+                        }
+                        
+                        break;
+                    case 39:
+                        if (me.pos.x < $(document).width() - 100) {
+                            me.pos.x += 50;
+                            socket.emit('player move', me);
+                        }
+                        
+                        break;
+                    case 37:
+                        if (me.pos.x > 0) {
+                            me.pos.x -= 50;
+                            socket.emit('player move', me);
+                        }
+                        
+                        break;
+                }
+                
+            });
+        </script>
+    </head>
+    <body style="padding: 0px; margin: 0px; overflow: hidden">
+        <div id="world" style="width:100%; height: 100%; position: absolute;">
+            
+        </div>
+    </body>
+</html>
