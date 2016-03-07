@@ -1,0 +1,3 @@
+/*
+    Fichier principal pour Electron
+*/

@@ -1,0 +1,13 @@
+.ttt-grid-cell {
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    cursor: pointer;
+}
+
+.ttt-grid {
+    position: absolute;
+    background-image: url("../images/grid.png");
+    width: 300px;
+    height: 400px;
+}

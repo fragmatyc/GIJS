@@ -1,0 +1,1 @@
+var ticTacToe = angular.module('TicTacToe', ['ngMaterial']);
