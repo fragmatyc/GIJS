@@ -11,7 +11,7 @@ Ce dépôt Git est destiné à la formation sur le JavaScript moderne du GIJS ch
     * Revue du cours
     * Electron + Electron Packager
   * Projet: TicTacToe Natif
-  *
+  
 ### Cours 7
 **Date:** 24 février 2016
 **Heure:** 17h00
