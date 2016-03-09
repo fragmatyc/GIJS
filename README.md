@@ -1,6 +1,17 @@
 ## Groupe d'intérêt JavaScript - CGI Québec
 Ce dépôt Git est destiné à la formation sur le JavaScript moderne du GIJS chez CGI à Québec. Avant chaque cours, le code source sera déposé ici afin de vous permettre d'en prendre une copie. Les présentations Reveal seront commitées à la fin du cours pour consultation future.
 
+### Cours 8
+**Date:** 9 mars 2016
+**Heure:** 17h00
+**Lieu:** Salle Laberge - Labrousse
+
+* Session 8 - Applications Natives
+  * Matière
+    * Revue du cours
+    * Electron + Electron Packager
+  * Projet: TicTacToe Natif
+  *
 ### Cours 7
 **Date:** 24 février 2016
 **Heure:** 17h00
